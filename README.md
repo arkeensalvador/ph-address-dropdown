@@ -3,6 +3,9 @@
 ![image](https://github.com/arkeensalvador/ph-address-dropdown/assets/99806440/a95e7d7f-afb9-4a8d-a47d-596c0a6d8625)
 
 ### Requirements:
+- XAMPP
+https://www.apachefriends.org/download.html
+
 - Jquery
 ```html
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
