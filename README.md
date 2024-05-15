@@ -1,4 +1,4 @@
-# Philippine Address Dependent Dropdown using JSON
+# Philippine Address Dependent Dropdown using JSON file
 
 ![image](https://github.com/arkeensalvador/ph-address-dropdown/assets/99806440/a95e7d7f-afb9-4a8d-a47d-596c0a6d8625)
 
@@ -132,4 +132,5 @@ https://www.apachefriends.org/download.html
 https://github.com/arkeensalvador/ph-address-dropdown/blob/main/index.php
 #### JSON
 https://github.com/arkeensalvador/ph-address-dropdown/blob/main/cluster.json
-
+<hr>
+<a href="https://www.buymeacoffee.com/devKom" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
