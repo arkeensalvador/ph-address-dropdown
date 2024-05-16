@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
         .select2-container .select2-selection--single {
@@ -62,7 +63,7 @@
         <small>Note: Add submit button function</small>
     </header>
     <div class="container mb-5">
-        <form>
+        <form id="myForm">
             <div class="mb-3">
                 <label for="regionSelect" class="col-sm-3 col-form-label">Region</label>
                 <div class="col-sm-12">
@@ -105,7 +106,7 @@
             </div>
             <div class="mb-2">
                 <div class="col-sm-12 text-center">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" onclick="submitForm()" class="btn btn-primary">Submit</button>
                 </div>
             </div>
         </form>
@@ -171,6 +172,42 @@
                     $('#barangaySelect').append("<option value='" + barangayName + "'>" + barangayName + "</option>");
                 });
             }
+        }
+    </script>
+
+    <script>
+        function submitForm() {
+            // Get selected values
+            var region = document.getElementById("regionSelect").value;
+            var province = document.getElementById("provinceSelect").value;
+            var municipality = document.getElementById("municipalitySelect").value;
+            var barangay = document.getElementById("barangaySelect").value;
+
+            // Check if any value is selected
+            if (!region || !province || !municipality || !barangay) {
+                // Show alert if any value is not selected
+                Swal.fire({
+                    text: 'Please select values from all dropdowns.',
+                    icon: 'warning',
+                });
+            } else {
+                // Construct message
+                var message = "Region: " + region + "<br>";
+                message += "Province: " + province + "<br>";
+                message += "Municipality: " + municipality + "<br>";
+                message += "Barangay: " + barangay;
+
+                // Display message using SweetAlert2
+                Swal.fire({
+                    title: 'Selected Values',
+                    html: message,
+                    icon: 'success',
+                });
+            }
+            // Prevent form submission
+            document.getElementById("myForm").addEventListener("submit", function(event) {
+                event.preventDefault();
+            });
         }
     </script>
 </body>
